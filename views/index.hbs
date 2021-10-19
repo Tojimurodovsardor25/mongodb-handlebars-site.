@@ -1,0 +1,17 @@
+<h1>{{title}}</h1>
+<p>Welcome to {{title}}</p>
+
+<form action="/new" method="POST">
+    <input type="text" name="name" required placeholder="Product name"><br><br>
+    <input type="text" name="price" required placeholder="Product price"><br><br>
+    <button type="submit" class="btn button">Create</button>
+</form>
+{{#if products.length}}
+{{#each products}}
+<h1>Product name: {{name}}</h1>
+<h2>Product price: {{price}}</h2>
+<hr>
+{{/each}}
+{{else}}
+<h1>Products is not defined</h1>
+{{/if}}
