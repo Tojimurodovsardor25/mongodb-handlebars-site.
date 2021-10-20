@@ -1,7 +1,14 @@
-const { Schema, model } = require('mongoose')
+const {
+    Schema,
+    model
+} = require('mongoose')
 
 const ProductSchema = new Schema({
     name: {
+        type: String,
+        required: true
+    },
+    title: {
         type: String,
         required: true
     },

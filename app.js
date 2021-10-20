@@ -8,6 +8,7 @@ const logger = require('morgan');
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
 const productRouter = require('./routes/product')
+const createRouter = require('./routes/create')
 
 const app = express();
 // view engine setup
@@ -32,7 +33,9 @@ require('./helper/db')()
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
@@ -42,6 +45,7 @@ app.use('/admin:any', express.static(path.join(__dirname, 'public')))
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/product', productRouter)
+app.use('/create', createRouter)
 
 
 

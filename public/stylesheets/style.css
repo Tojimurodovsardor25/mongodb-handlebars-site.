@@ -11,3 +11,19 @@ a {
   margin-left: 202px;
   padding-top: 45px;
 }
+
+.createlabel {
+  margin-left: 25px;
+  margin-bottom: 0;
+}
+
+.createlabel .custom-control-label {
+  padding-top: 4px;
+  color: #cf3f3f;
+  font-weight: 500 !important;
+}
+
+.custom-control-input:checked~.custom-control-label::before {
+  border-color: #02458d;
+  background-color: #007bff;
+}
