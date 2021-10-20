@@ -4,5 +4,10 @@ body {
 }
 
 a {
-  color: #00B7FF;
+  color: #00b7ff;
+}
+
+.wrapper {
+  margin-left: 202px;
+  padding-top: 45px;
 }

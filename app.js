@@ -7,10 +7,11 @@ const logger = require('morgan');
 
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
+const productRouter = require('./routes/product')
 
 const app = express();
-
 // view engine setup
+
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
@@ -40,6 +41,7 @@ app.use('/admin:any', express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
+app.use('/product', productRouter)
 
 
 
