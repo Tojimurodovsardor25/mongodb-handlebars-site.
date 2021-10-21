@@ -8,14 +8,19 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    title: {
+    titletxt: {
         type: String,
         required: true
     },
-    price: {
-        type: Number,
+    company: {
+        type: String,
+        required: true
+    },
+    img: {
+        type: String,
         required: true
     }
+
 })
 
 module.exports = model('product', ProductSchema)

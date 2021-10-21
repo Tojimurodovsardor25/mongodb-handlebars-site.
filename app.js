@@ -44,8 +44,8 @@ app.use('/admin:any', express.static(path.join(__dirname, 'public')))
 
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
-app.use('/product', productRouter)
-app.use('/create', createRouter)
+app.use('/admin/create', createRouter)
+app.use('/admin/product', productRouter)
 
 
 

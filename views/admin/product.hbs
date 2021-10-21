@@ -1,0 +1,64 @@
+{{#if products.length}}
+{{#each products}}
+<section class="content">
+    <div class="card card-solid">
+        <div class="card-body">
+            <form action="/admin/product" method="POST">
+                <div class="row">
+                    <div class="col-12 col-sm-6">
+                        <h2 class="d-inline-block d-sm-none">{{name}}</h2>
+                        <div class="col-12">
+                            <img src="{{img}}" class="product-image" alt="Product Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6">
+                    <h3 class="my-3">{{name}}</h3>
+                    <p>{{titletxt}}</p>
+                    <hr>
+                    <div class="bg-gray py-2 px-3 mt-4">
+                        <h2 class="mb-0">
+                            $80.00
+                        </h2>
+                        <h4 class="mt-0">
+                            <small>{{situation}}</small>
+                        </h4>
+                    </div>
+                    <div class="mt-4">
+                        <div class="btn btn-primary btn-lg btn-flat">
+                            <i class="fas fa-cart-plus fa-lg mr-2"></i>
+                            Add to Cart
+                        </div>
+                        <div class="btn btn-default btn-lg btn-flat">
+                            <i class="fas fa-heart fa-lg mr-2"></i>
+                            Add to Wishlist
+                        </div>
+                    </div>
+                    <div class="mt-4 product-share">
+                        <a href="#" class="text-gray">
+                            <i class="fab fa-facebook-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fab fa-twitter-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fas fa-envelope-square fa-2x"></i>
+                        </a>
+                        <a href="#" class="text-gray">
+                            <i class="fas fa-rss-square fa-2x"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" class="btn btn-secondary">Bekor</a>
+                        <input type="submit" value="Mahsulot qo'shish" class="btn btn-success float-right">
+                    </div>
+                </div>
+            </form>
+        </div>
+</section>
+{{/each}}
+{{else}}
+<p>Bo'sh</p>
+{{/if}}

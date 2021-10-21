@@ -1,14 +1,16 @@
 const express = require('express');
 const router = express.Router();
-// const Product = require('../models/Product')
+const Product = require('../models/Product')
 
 /* GET home page. */
-router.get('/', function (req, res, next) {
-    // console.log(products); // massiv
+router.get('/', async function (req, res, next) {
+    const products = await Product.find()
+    console.log(products + 'Salom'); // massiv
 
-    res.render('product', {
+    res.render('admin/product', {
         title: 'Product page',
-        isProduct: true
+        isHome: true,
+        products
     });
 });
 
