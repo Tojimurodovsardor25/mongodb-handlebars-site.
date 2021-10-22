@@ -9,6 +9,7 @@ const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
 const productRouter = require('./routes/product')
 const createRouter = require('./routes/create')
+const editRouter = require('./routes/edit')
 
 const app = express();
 // view engine setup
@@ -46,13 +47,14 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/admin/create', createRouter)
 app.use('/admin/product', productRouter)
+app.use('/admin/edit', editRouter)
 
 
 
-// catch 404 and forward to error handler
-app.use(function (req, res, next) {
-  next(createError(404));
-});
+// // catch 404 and forward to error handler
+// app.use(function (req, res, next) {
+//   next(createError(404));
+// });
 
 // error handler
 app.use(function (err, req, res, next) {

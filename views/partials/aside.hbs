@@ -30,24 +30,51 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
+                        {{#if isProduct}}
+                        <li class="nav-item">
+                            <a href="/admin/product" class="nav-link active">
+                                <i class="far fa-circle nav-icon icon-filter"></i>
+                                <p>Mahsulot sahifasi</p>
+                            </a>
+                        </li>
+                        {{else}}
                         <li class="nav-item">
                             <a href="/admin/product" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mahsulot sahifasi</p>
                             </a>
                         </li>
+                        {{/if}}
+                        {{#if isCreate}}
+                        <li class="nav-item">
+                            <a href="/admin/create" class="nav-link active">
+                                <i class="far fa-circle nav-icon icon-filter"></i>
+                                <p>Mahsulot qo'shish</p>
+                            </a>
+                        </li>
+                        {{else}}
                         <li class="nav-item">
                             <a href="/admin/create" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mahsulot qo'shish</p>
                             </a>
                         </li>
+                        {{/if}}
+                        {{#if isEdit}}
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link active">
+                            <a href="/admin/edit" class="nav-link active">
+                                <i class="far fa-circle nav-icon icon-filter"></i>
+                                <p>Mahsulot tahrirlash</p>
+                            </a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
+                            <a href="/admin/edit" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
                                 <p>Mahsulot tahrirlash</p>
                             </a>
                         </li>
+                        {{/if}}
                     </ul>
                 </li>
             </ul>

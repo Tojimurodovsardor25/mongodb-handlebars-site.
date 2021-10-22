@@ -9,7 +9,7 @@ router.get('/', async function (req, res, next) {
 
     res.render('admin/create', {
         title: 'Create page',
-        isHome: true,
+        isCreate: true,
     });
 });
 
@@ -30,7 +30,7 @@ router.post('/', async function (req, res, next) {
         situation,
         img
     })
-    console.log(req.body);
+    console.log(products);
     await products.save()
     res.redirect('/admin/product')
 });
