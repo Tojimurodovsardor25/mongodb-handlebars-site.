@@ -3,7 +3,7 @@ const router = express.Router();
 const Product = require('../models/Product')
 
 /* GET home page. */
-router.get('/', async function (req, res, next) {
+router.get('/', async function (req, res) {
     const allProducts = await Product.find()
     // console.log(products); // massiv
 
@@ -14,7 +14,7 @@ router.get('/', async function (req, res, next) {
     });
 });
 
-router.post('/new', async function (req, res, next) {
+router.post('/new', async function (req, res) {
     // console.log(req.body);
     const {
         name,
