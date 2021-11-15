@@ -1,0 +1,27 @@
+{{#if products.length}}
+  {{#each products}}
+    <div class="col-lg-3">
+      <div class="card">
+        <img src="/images/{{img}}" alt="{{img}}" />
+        <div class="card-body" style="text-align: center;">
+          <a href="/admin/category/read/{{id}}" class="card-title">{{name}}</a>
+          <br />
+          <p class="card-title">{{price}}</p>
+          <hr />
+          <div class="d-flex">
+            <a
+              href="/admin/category/delete/{{id}}"
+              class="btn btn-danger"
+            >O'chirish</a>
+            <a
+              href="/admin/category/edit/{{id}}"
+              class="btn btn-warning"
+            >O'zgartirish</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/each}}
+{{else}}
+  <h1>Mahsulotlar yo'q</h1>
+{{/if}}

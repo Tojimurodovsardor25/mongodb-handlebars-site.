@@ -1,11 +1,16 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
+const auth = require("../middleware/auth");
+const Admin = require("../models/Admin");
 
 /* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.render('admin/index', {
-    layout: 'main',
-  })
+router.get("/", auth, async function (req, res, next) {
+  const admin = await Admin.find();
+
+  res.render("admin/index", {
+    layout: "main",
+    admin,
+  });
 });
 
 module.exports = router;

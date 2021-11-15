@@ -3,33 +3,30 @@ const router = express.Router();
 const Product = require('../models/Product')
 
 /* GET home page. */
-router.get('/', async function (req, res) {
-    const allProducts = await Product.find()
-    // console.log(products); // massiv
+router.get('/', async function (req, res, next) {
+  const products = await Product.find()
+  // console.log(products); // massiv
 
-    res.render('index', {
-        title: 'Create page',
-        isHome: true,
-        allProducts
-    });
+  res.render('index', {
+    title: 'Express',
+    products,
+  });
 });
 
-router.post('/new', async function (req, res) {
-    // console.log(req.body);
-    const {
-        name,
-        titletxt,
-        company,
-        situation
-    } = req.body
-    const allProducts = new Product({
-        name,
-        titletxt,
-        company,
-        situation
-    })
-    await allProducts.save()
-    res.redirect('/admin/product')
+router.post('/new', async function (req, res, next) {
+  // console.log(req.body);
+
+  const { name, price, context, img } = req.body
+  const product = new Product({
+    name,
+    price,
+    img,
+    context,
+    categoryId
+  })
+
+  await product.save()
+  res.redirect('/')
 });
 
 module.exports = router;

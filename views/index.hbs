@@ -1,56 +1,335 @@
-{{#if products.length}}
-{{#each products}}
-<section class="content">
-    <div class="card card-solid">
-        <div class="card-body">
-            <div class="row">
-                <div class="col-12 col-sm-6">
-                    <h2 class="d-inline-block d-sm-none">{{name}}</h2>
-                    <div class="col-12">
-                        <img src="{{img}}" class="product-image" alt="Product Image">
-                    </div>  
-                </div>
+{{! <h1>Hello I'm Client page</h1> }}
+
+{{! <a href="/auth/login" class="btn btn-primary">Login</a> }}
+
+<nav>
+  <div class="navtop-fixed">
+    <div class="container-drop">
+      <div class="container">
+        <div class="navbar-top">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="#">Freegram</a>
+              <button
+                class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="#"
+                    >Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      aria-current="page"
+                      href="#"
+                    >Contact</a>
+                  </li>
+                </ul>
+                <form class="d-flex" style="width: 50%;">
+                  <input
+                    class="form-control me-2"
+                    type="search"
+                    placeholder="Izlash"
+                    aria-label="Izlash"
+                  />
+                  <button class="nav-btn" type="submit">Izlash</button>
+                </form>
+              </div>
             </div>
-            <div class="col-12 col-sm-6">
-                <h3 class="my-3">{{name}}</h3>
-                <p>{{titletxt}}</p>
-                <hr>
-                <div class="bg-gray py-2 px-3 mt-4">
-                    <h2 class="mb-0">
-                        $80.00
-                    </h2>
-                    <h4 class="mt-0">
-                        <small>{{situation}}</small>
-                    </h4>
-                </div>
-                <div class="mt-4">
-                    <div class="btn btn-primary btn-lg btn-flat">
-                        <i class="fas fa-cart-plus fa-lg mr-2"></i>
-                        Add to Cart
-                    </div>
-                    <div class="btn btn-default btn-lg btn-flat">
-                        <i class="fas fa-heart fa-lg mr-2"></i>
-                        Add to Wishlist
-                    </div>
-                </div>
-                <div class="mt-4 product-share">
-                    <a href="#" class="text-gray">
-                        <i class="fab fa-facebook-square fa-2x"></i>
-                    </a>
-                    <a href="#" class="text-gray">
-                        <i class="fab fa-twitter-square fa-2x"></i>
-                    </a>
-                    <a href="#" class="text-gray">
-                        <i class="fas fa-envelope-square fa-2x"></i>
-                    </a>
-                    <a href="#" class="text-gray">
-                        <i class="fas fa-rss-square fa-2x"></i>
-                    </a>
-                </div>
-            </div>
+          </nav>
         </div>
-</section>
-{{/each}}
-{{else}}
-<p>Bo'sh</p>
-{{/if}}
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================================================== // Header Start -->
+<div class="header-background">
+  <div class="header-con">
+    <div class="container">
+      <div class="row border-row">
+        <div class="col-10 content-fragment">
+          <div class="big-container">
+            {{#if products.length}}
+              {{#each products}}
+                <div class="new-content">
+                  <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box new-content-->
+                  <div class="content-box">
+                    <div class="git-fixed">
+                      <div class="git-radius">
+                        <div class="git-commit">
+                          <div class="commit-bruner"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="content-newcontext">
+                      <div class="content-view">
+                        <div class="content-boxleft-img">
+                          <img src="/images/{{img}}" alt="png" />
+                        </div>
+                        <div class="content-text">
+                          <h1><a href="/viewIndex/{{id}}">{{name}}</a></h1>
+                          <p>{{context}}
+                          </p>
+                          <div class="content-context-new">
+                            <a href="#!">Boshqa ma'lumotlar shu yerda</a>
+                            <span>/</span>
+                            <a href="#!">Boshqa mavzular</a>
+                          </div>
+                          <div class="hbs_d"></div>
+                          <div class="city_info_map"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {{/each}}
+            {{/if}}
+            <div class="flutform">
+              <div class="git-fixed-exnd">
+                <div class="git-exend">
+                  <img
+                    class="Bird-img"
+                    src="/images/program-bpublic/—Pngtree—creative swallow bird flying silhouette_5434416.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- ===================================================== // Content menu Start -->
+        <div class="col-4">
+          <!-- //========== O'zgarmas qutilar -->
+          <div class="right-big-box">
+            <div class="rigth-container">
+              <div class="content-min-box">
+                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+                <div class="min-content-img">
+                  <img
+                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+                    alt="png"
+                  />
+                </div>
+                <div class="min-box-context">
+                  <h5>Hello! New content</h5>
+                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
+                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
+                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
+                    bilan birgalikda boshladik</span>
+                </div>
+              </div>
+              <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+              <div class="content-min-box">
+                <div class="min-content-img">
+                  <img
+                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+                    alt="png"
+                  />
+                </div>
+                <div class="min-box-context">
+                  <h5>Hello! New content</h5>
+                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
+                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
+                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
+                    bilan birgalikda boshladik</span>
+                </div>
+              </div>
+              <div class="content-min-box">
+                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+                <div class="min-content-img">
+                  <img
+                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+                    alt="png"
+                  />
+                </div>
+                <div class="min-box-context">
+                  <h5>Hello! New content</h5>
+                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
+                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
+                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
+                    bilan birgalikda boshladik</span>
+                </div>
+              </div>
+              <div class="content-min-box">
+                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+                <div class="min-content-img">
+                  <img
+                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
+                    alt="png"
+                  />
+                </div>
+                <div class="min-box-context">
+                  <h5>Hello! New content</h5>
+                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
+                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
+                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
+                    bilan birgalikda boshladik</span>
+                </div>
+              </div>
+            </div>
+            <div class="right-container-new">
+              <!-- O'zgarmas qutilar right-container-new-->
+              <div class="container-content-link">
+                <!-- //==================== O'zgaruvchi contentlar container-content-link-->
+                <!-- Kichik maqolalar bilan ishlash -->
+                <div class="new-content-box-minbox">
+                  <h3>Yangi maqolalar</h3>
+                </div>
+                <div class="big-context-box-href">
+                  <div class="left-link">
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Bu-qanay bo'ladi</a>
+                    </div>
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Yana yangi</a>
+                    </div>
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Adolatli qaror</a>
+                    </div>
+                  </div>
+                  <div class="right-link">
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Bu-qanay bo'ladi</a>
+                    </div>
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Yana yangi</a>
+                    </div>
+                    <div class="link-context">
+                      <a href="#!">Bu nimalar? Adolatli qaror</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="menu-big-content">
+                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar menu-big-content-->
+                <div class="menu-content-box">
+                  <div class="menu-big-img">
+                    <img
+                      src="./images/05112021-192310_043-Milk-production-in-heifers-fed-Digestarom-Dairy-increased-by-0.7-kg-per-day.jpg"
+                      alt="png"
+                    />
+                  </div>
+                  <div class="menu-big-context">
+                    <h3>Salom bizning Change</h3>
+                    <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
+                      contextlar va ulrning qulayliklari, avfzalliklari haqida
+                      biz siz bilan batafsil tanishamiz degan umidda bu ishni
+                      jamoamiz bilan birgalikda boshladik</span>
+                  </div>
+                </div>
+              </div>
+              <div class="linkb-top">
+                <!-- O'zgarmas qutilar linkb-top-->
+                <div class="link-content-min">
+                  <a href="#!">Boshqa mavzular va ularning batafsil ma'lumotlari</a>
+                </div>
+                <div class="link-content-min">
+                  <a href="#!">Boshqa mavzular bu nima u qanday ishlaydi?</a>
+                </div>
+                <div class="link-content-min">
+                  <a href="#!">Boshqa mavzular yangi mavzular bilan</a>
+                </div>
+                <div class="link-content-min">
+                  <a href="#!">Boshqa mavzular</a>
+                </div>
+                <div class="link-content-min">
+                  <a href="#!">Boshqa mavzular</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ===================================================== // Footer Start -->
+<footer>
+  <nav>
+    <div class="nav-footer">
+      <div class="container">
+        <div class="row d-flex justify-content-center goo-end">
+          <h3>Freegram</h3>
+          <div class="col">
+            <ul>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+              <li>
+                <a href="#!">COl</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</footer>

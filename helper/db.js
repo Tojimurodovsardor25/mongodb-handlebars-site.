@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const URI = 'mongodb+srv://tojimuradov:TcQT8qOPlHQRz2Pj@hbsmongodbmongoose.7vugm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const URI = 'mongodb+srv://Ays:EbMCjLHRBVSesfUq@cluster0.vbsgk.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
 
 
 module.exports = async () => {

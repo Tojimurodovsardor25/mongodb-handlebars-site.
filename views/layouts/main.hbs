@@ -2,13 +2,21 @@
 <html lang="en">
 {{> head}}
 
+
 <body class="hold-transition dark-mode sidebar-mini layout-fixed layout-navbar-fixed layout-footer-fixed">
   <div class="wrapper">
     {{> preloader}}
+    
     {{> navbar}}
+    {{#if isAuthen}}
     {{> aside}}
-
-    {{{body}}}
+    {{/if}}
+    <div class="content-wrapper">
+      {{> header}}
+      <div class="content">
+        {{{body}}}
+      </div>
+    </div>
     {{> footer}}
   </div>
 

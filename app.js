@@ -4,22 +4,27 @@ const exhbs = require('express-handlebars')
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const session = require('express-session');
+const MongoStore = require('connect-mongodb-session')(session)
 
 const indexRouter = require('./routes/index');
 const adminRouter = require('./routes/admin');
-const productRouter = require('./routes/product')
-const createRouter = require('./routes/create')
-const editRouter = require('./routes/edit')
+const categoryRouter = require('./routes/category');
+const productRouter = require('./routes/product');
+const authRouter = require('./routes/auth');
+const viewIndexRouter = require('./routes/viewIndex');
+
+const variables = require('./middleware/virables')
 
 const app = express();
-// view engine setup
 
+// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 app.engine('hbs', exhbs({
   layoutsDir: path.join(__dirname, 'views/layouts'),
-  defaultLayout: 'main',
+  defaultLayout: 'layout',
   extname: 'hbs',
   partialsDir: [
     path.join(__dirname, 'views/partials')
@@ -30,31 +35,44 @@ app.engine('hbs', exhbs({
   }
 }))
 
+const store = new MongoStore({
+  uri: 'mongodb+srv://mirzaabdullayev:GyeI0l6BlW34k7aR@adminpanel.3hbpu.mongodb.net/adminPanel',
+  collection: 'session'
+})
+
 require('./helper/db')()
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({
-  extended: true
-}));
+app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(session({
+  resave: false,
+  secret: 'some_secret_key',
+  saveUninitialized: false,
+  store
+}))
 
 app.use('/admin', express.static(path.join(__dirname, 'public')))
 app.use('/admin:any', express.static(path.join(__dirname, 'public')))
 
+app.use(variables)
+
 app.use('/', indexRouter);
 app.use('/admin', adminRouter);
-app.use('/admin/create', createRouter)
-app.use('/admin/product', productRouter)
-app.use('/admin/edit', editRouter)
+app.use('/admin/category', categoryRouter);
+app.use('/admin/product', productRouter);
+app.use('/auth', authRouter);
+app.use('/viewIndex', viewIndexRouter);
 
 
 
-// // catch 404 and forward to error handler
-// app.use(function (req, res, next) {
-//   next(createError(404));
-// });
+// catch 404 and forward to error handler
+app.use(function (req, res, next) {
+  next(createError(404));
+});
 
 // error handler
 app.use(function (err, req, res, next) {
