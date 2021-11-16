@@ -10,41 +10,22 @@
           <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
               <a class="navbar-brand" href="#">Freegram</a>
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent"
-                aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="#"
-                    >Home</a>
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
                   </li>
                   <li class="nav-item">
-                    <a
-                      class="nav-link active"
-                      aria-current="page"
-                      href="#"
-                    >Contact</a>
+                    <a class="nav-link active" aria-current="page" href="#">Contact</a>
                   </li>
                 </ul>
                 <form class="d-flex" style="width: 50%;">
-                  <input
-                    class="form-control me-2"
-                    type="search"
-                    placeholder="Izlash"
-                    aria-label="Izlash"
-                  />
+                  <input class="form-control me-2" type="search" placeholder="Izlash" aria-label="Izlash" />
                   <button class="nav-btn" type="submit">Izlash</button>
                 </form>
               </div>
@@ -64,48 +45,45 @@
         <div class="col-10 content-fragment">
           <div class="big-container">
             {{#if products.length}}
-              {{#each products}}
-                <div class="new-content">
-                  <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box new-content-->
-                  <div class="content-box">
-                    <div class="git-fixed">
-                      <div class="git-radius">
-                        <div class="git-commit">
-                          <div class="commit-bruner"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="content-newcontext">
-                      <div class="content-view">
-                        <div class="content-boxleft-img">
-                          <img src="/images/{{img}}" alt="png" />
-                        </div>
-                        <div class="content-text">
-                          <h1><a href="/viewIndex/{{id}}">{{name}}</a></h1>
-                          <p>{{context}}
-                          </p>
-                          <div class="content-context-new">
-                            <a href="#!">Boshqa ma'lumotlar shu yerda</a>
-                            <span>/</span>
-                            <a href="#!">Boshqa mavzular</a>
-                          </div>
-                          <div class="hbs_d"></div>
-                          <div class="city_info_map"></div>
-                        </div>
-                      </div>
+            {{#each products}}
+            <div class="new-content">
+              <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box new-content-->
+              <div class="content-box">
+                <div class="git-fixed">
+                  <div class="git-radius">
+                    <div class="git-commit">
+                      <div class="commit-bruner"></div>
                     </div>
                   </div>
                 </div>
-              {{/each}}
+                <div class="content-newcontext">
+                  <div class="content-view">
+                    <div class="content-boxleft-img">
+                      <img src="/images/{{img}}" alt="png" />
+                    </div>
+                    <div class="content-text">
+                      <h1><a href="/viewIndex/{{id}}">{{name}}</a></h1>
+                      <p>{{context}}
+                      </p>
+                      <div class="content-context-new">
+                        <a href="#!">Boshqa ma'lumotlar shu yerda</a>
+                        <span>/</span>
+                        <a href="#!">Boshqa mavzular</a>
+                      </div>
+                      <div class="hbs_d"></div>
+                      <div class="city_info_map"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {{/each}}
             {{/if}}
             <div class="flutform">
               <div class="git-fixed-exnd">
                 <div class="git-exend">
-                  <img
-                    class="Bird-img"
-                    src="/images/program-bpublic/—Pngtree—creative swallow bird flying silhouette_5434416.png"
-                    alt=""
-                  />
+                  <img class="Bird-img"
+                    src="/images/program-bpublic/—Pngtree—creative swallow bird flying silhouette_5434416.png" alt="" />
                 </div>
               </div>
             </div>
@@ -116,70 +94,22 @@
           <!-- //========== O'zgarmas qutilar -->
           <div class="right-big-box">
             <div class="rigth-container">
-              <div class="content-min-box">
-                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
-                <div class="min-content-img">
-                  <img
-                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
-                    alt="png"
-                  />
+              {{#if products.length}}
+              {{#each products}}
+              <a href="/viewIndex/{{id}}">
+                <div class="content-min-box">
+                  <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+                  <div class="min-content-img">
+                    <img src="/images/{{img}}" alt="png" />
+                  </div>
+                  <div class="min-box-context">
+                    <h5>{{name}}</h5>
+                    <span>{{context}}</span>
+                  </div>
                 </div>
-                <div class="min-box-context">
-                  <h5>Hello! New content</h5>
-                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
-                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
-                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
-                    bilan birgalikda boshladik</span>
-                </div>
-              </div>
-              <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
-              <div class="content-min-box">
-                <div class="min-content-img">
-                  <img
-                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
-                    alt="png"
-                  />
-                </div>
-                <div class="min-box-context">
-                  <h5>Hello! New content</h5>
-                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
-                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
-                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
-                    bilan birgalikda boshladik</span>
-                </div>
-              </div>
-              <div class="content-min-box">
-                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
-                <div class="min-content-img">
-                  <img
-                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
-                    alt="png"
-                  />
-                </div>
-                <div class="min-box-context">
-                  <h5>Hello! New content</h5>
-                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
-                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
-                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
-                    bilan birgalikda boshladik</span>
-                </div>
-              </div>
-              <div class="content-min-box">
-                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
-                <div class="min-content-img">
-                  <img
-                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
-                    alt="png"
-                  />
-                </div>
-                <div class="min-box-context">
-                  <h5>Hello! New content</h5>
-                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
-                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
-                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
-                    bilan birgalikda boshladik</span>
-                </div>
-              </div>
+              </a>
+              {{/each}}
+              {{/if}}
             </div>
             <div class="right-container-new">
               <!-- O'zgarmas qutilar right-container-new-->
@@ -220,8 +150,7 @@
                   <div class="menu-big-img">
                     <img
                       src="./images/05112021-192310_043-Milk-production-in-heifers-fed-Digestarom-Dairy-increased-by-0.7-kg-per-day.jpg"
-                      alt="png"
-                    />
+                      alt="png" />
                   </div>
                   <div class="menu-big-context">
                     <h3>Salom bizning Change</h3>
@@ -329,7 +258,3 @@
             </ul>
           </div>
         </div>
-      </div>
-    </div>
-  </nav>
-</footer>

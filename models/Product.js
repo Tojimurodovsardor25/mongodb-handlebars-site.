@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose')
 
-const ProductSchema = new Schema({
+const MaxlinkSchema = new Schema({
     name: {
         type: String,
         required: true
@@ -17,19 +17,10 @@ const ProductSchema = new Schema({
         type: String,
         required: true
     },
-    maxName: {
-        type: String,
-    },
-    maxImg: {
-        type: String,
-    },
-    maxText: {
-        type: String,
-    },
     categoryId: {
         ref: 'categories',
         type: Schema.Types.ObjectId
     }
 })
 
-module.exports = model('product', ProductSchema)
+module.exports = model('product', MaxlinkSchema)

@@ -112,22 +112,22 @@
           <!-- //========== O'zgarmas qutilar -->
           <div class="right-big-box">
             <div class="rigth-container">
-              <div class="content-min-box">
-                <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
-                <div class="min-content-img">
-                  <img
-                    src="./images/05112021-185034_629-assortment-of-colorful-ripe-tropical-fruits-top-royalty-free-image-995518546-1564092355.jpg"
-                    alt="png"
-                  />
-                </div>
-                <div class="min-box-context">
-                  <h5>Hello! New content</h5>
-                  <span>Bizning ma'lumotlarimiz batafsil shu yerda ko'rinadi
-                    contextlar va ulrning qulayliklari, avfzalliklari haqida biz
-                    siz bilan batafsil tanishamiz degan umidda bu ishni jamoamiz
-                    bilan birgalikda boshladik</span>
-                </div>
-              </div>
+              {{#if products.length}}
+                {{#each products}}
+                  <a href="/viewIndex/{{id}}">
+                    <div class="content-min-box">
+                      <!-- //========== O'zgaruvchi qo'shish va taxrirlash uchun qutilar content-min-box-->
+                      <div class="min-content-img">
+                        <img src="/images/{{img}}" alt="png" />
+                      </div>
+                      <div class="min-box-context">
+                        <h5>{{name}}</h5>
+                        <span>{{context}}</span>
+                      </div>
+                    </div>
+                  </a>
+                {{/each}}
+              {{/if}}
             </div>
             <div class="right-container-new">
               <!-- O'zgarmas qutilar right-container-new-->

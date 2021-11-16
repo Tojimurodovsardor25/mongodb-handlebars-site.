@@ -284,7 +284,7 @@
 }
 
 .git-fixed-exnd {
-  width: 27.3rem;
+  width: 25.3rem;
   height: 1.5rem;
   /* background: #6389af; */
   position: absolute;
@@ -370,6 +370,7 @@
   height: 657px;
   background: #4a4a4a;
   padding: 9px;
+  overflow: hidden;
 }
 
 .min-box-context {
@@ -476,7 +477,7 @@
 
 .header-con .row {
   overflow-x: hidden;
-  width: 1110px;
+  width: 1019px;
   margin: 0;
   background: #fff9;
 }
@@ -704,4 +705,8 @@
 }
 .view-content p {
   color: #000 !important;
+}
+
+.content-fragment{
+  margin-left: 25px;
 }
