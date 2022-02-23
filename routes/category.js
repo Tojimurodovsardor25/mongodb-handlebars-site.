@@ -97,7 +97,7 @@ router.get("/edit/:id", async (req, res) => {
     category,
     header: "Kategoriyalarni yangilash",
     title: "Kategoriyalarni yangilash",
-    layout: "main",
+    layout: "main",       
   });
 });
 

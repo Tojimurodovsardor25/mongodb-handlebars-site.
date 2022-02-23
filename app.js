@@ -36,7 +36,7 @@ app.engine('hbs', exhbs({
 }))
 
 const store = new MongoStore({
-  uri: 'mongodb+srv://mirzaabdullayev:GyeI0l6BlW34k7aR@adminpanel.3hbpu.mongodb.net/adminPanel',
+  uri: 'mongodb+srv://tojimuradov:aHUfjDfe7UQGaKLn@hbsmongodbmongoose.7vugm.mongodb.net/myFirstDatabase?retryWrites=true&w=majority',
   collection: 'session'
 })
 
